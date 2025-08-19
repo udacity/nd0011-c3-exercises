@@ -1,4 +1,4 @@
-**Object Destructuring and Tempalte Literals Exercise**
+**Object Destructuring and Template Literals Exercise**
 ---
 Let's get some quick practice with object destructuring and template literals.
 
