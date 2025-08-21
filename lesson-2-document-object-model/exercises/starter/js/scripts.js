@@ -15,7 +15,8 @@ function executeQuery(query) {
 
 function sanitizeQuery(input) {
     // Remove anything that's not alphanumeric, spaces, or specific allowed characters
-    const sanitized = input.replace(/[^a-zA-Z0-9\s\.\[\]"'=()]/g, '');
+    const sanitized = input.replace(/[^a-zA-Z0-9\s\.\[\]"'=()-]/g, '');
+    // previous sanitized variable would not allow the dash in data-questNum so the question always failed
 
     // Ensure the query starts with 'document.querySelector' or 'document.querySelectorAll'
     if (!sanitized.startsWith('document.querySelector') && !sanitized.startsWith('document.querySelectorAll')) {
