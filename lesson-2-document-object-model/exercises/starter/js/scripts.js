@@ -14,8 +14,8 @@ function executeQuery(query) {
 }
 
 function sanitizeQuery(input) {
-    // Remove anything that's not alphanumeric, spaces, or specific allowed characters
-    const sanitized = input.replace(/[^a-zA-Z0-9\s\.\[\]"'=()]/g, '');
+    // Remove anything that's not alphanumeric, spaces, or characters used in CSS selectors
+    const sanitized = input.replace(/[^a-zA-Z0-9\s\.\[\]"'=()\-_#>:*~+,]/g, '');
 
     // Ensure the query starts with 'document.querySelector' or 'document.querySelectorAll'
     if (!sanitized.startsWith('document.querySelector') && !sanitized.startsWith('document.querySelectorAll')) {
